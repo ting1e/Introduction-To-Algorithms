@@ -15,21 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="第二章 算法基础\02_1_插入排序.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="bash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第二章 算法基础\02_2_分析算法.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第二章 算法基础\02_3_设计算法.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="IntroductionToAlgorithms.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="stdafx.c">
+    <ClCompile Include="main.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
