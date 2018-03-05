@@ -94,6 +94,15 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <HeapReserveSize>
+      </HeapReserveSize>
+      <HeapCommitSize>
+      </HeapCommitSize>
+      <StackReserveSize>
+      </StackReserveSize>
+      <StackCommitSize>
+      </StackCommitSize>
+      <LargeAddressAware>false</LargeAddressAware>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -151,6 +160,7 @@
     <ClInclude Include="第二章 算法基础\02_1_插入排序.h" />
     <ClInclude Include="第二章 算法基础\02_2_分析算法.h" />
     <ClInclude Include="第二章 算法基础\02_3_设计算法.h" />
+    <ClInclude Include="第四章 分治策略\04_1_最大子数组问题.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
