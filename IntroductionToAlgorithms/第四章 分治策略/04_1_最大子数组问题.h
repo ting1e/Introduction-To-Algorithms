@@ -144,15 +144,50 @@ int(*FindMaxSubArrayForce2(int array[], int start, int end))[3]
 	return max;
 }
 //练习4.1 - 5 
+/*
+	思想：由左至右处理，记录目前为止已经处理过的最大子数组，若已知A【1。。j】的最大子数组，
+	A【1.。J+1】的最大子数组要么是已知的A【1。。j】的最大子数组，要么是某个右边界为j+1的某个
+	子数组。
+*/
 
 
-
+int(*FindMaxSubArrayLoop(int array[], int start, int end))[3]
+{
+	int(*max)[3] = (int(*)[3])malloc((sizeof(int)) * 3);
+	int left,sum;
+	int temp_max;
+	(*max)[0] = start;
+	(*max)[1] = start;
+	(*max)[2] = array[start];
+	for (int i = start; i < end; i++)
+	{
+		sum = 0;
+		temp_max = array[i + 1];
+		left = i + 1;
+		for (int j = i+1; j >= start; j--)
+		{
+			sum += array[j];
+			if (sum > temp_max)
+			{
+				temp_max = sum;
+				left = j;
+			}
+		}
+		if (temp_max > (*max)[2])
+		{
+			(*max)[0] = left;
+			(*max)[1] = i + 1;
+			(*max)[2] = temp_max;	
+		}
+	}
+	return max;
+}
 
 //获取最大子串简单测试
 void FindMaxSubArrayTest()
 {
 	int a[] = { 13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7 };
-	int(*val)[3] = FindMaxSubArrayForce2(a, 0, 14);
+	int(*val)[3] = FindMaxSubArray(a, 0, 14);
 	free(val);
 }
 /*
