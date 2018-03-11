@@ -30,6 +30,9 @@
     <ClInclude Include="第四章 分治策略\04_1_最大子数组问题.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="第四章 分治策略\04_2_矩阵乘法的Strassen算法.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
