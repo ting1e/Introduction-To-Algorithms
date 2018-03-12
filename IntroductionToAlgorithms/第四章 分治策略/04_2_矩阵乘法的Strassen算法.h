@@ -222,7 +222,7 @@ matrix *MatrixMultiplyStrassen(matrix *a, matrix *b)
 		b22 = (matrix*)malloc(sizeof(matrix));
 		DepartAMatrixToFour(b, b11, b12, b21, b22);
 
-		matrix *s1 = MatrixMinus(b21,b22);
+		matrix *s1 = MatrixMinus(b12,b22);
 		matrix *s2 = MatrixPlus(a11, a12);
 		matrix *s3 = MatrixPlus(a21, a22);
 		matrix *s4 = MatrixMinus(b21, b11);
@@ -274,13 +274,30 @@ matrix *MatrixMultiplyStrassen(matrix *a, matrix *b)
 
 void MutiplyStrassenTest()
 {
-	int abody[8] = { 1,1,1,1,2,2,2,2 };
-	int bdody[8] = { 3,4,3,4,3,4,3,4 };
-	matrix a = { 2,4,abody };
-	matrix b = { 4,2,bdody };
-	matrix *aa = (matrix *)malloc(sizeof(matrix));
-	int *vvv = (int *)malloc(sizeof(int) * 4);
+	int abody[] = { 1,2,3,4 };
+	int bdody[] = { 5,6,7,8 };
+	matrix a = { 2,2,abody };
+	matrix b = { 2,2,bdody };
 	matrix *sum = MatrixMultiplyStrassen(&a, &b);
 	printf("%d", (int)(*(sum->body + 1 * sum->col + 1)));
 	int i = 0;
 }
+
+
+/*
+	练习4.2-3 适应n不是2的幂的情况
+	先找出最大的n的幂次方的子矩阵，然后利用矩阵运算的知识进行运算。
+	等什么时候复习了线性代数的知识在来写代码吧
+	练习4.2-3
+	a,b,c,d	三次乘法得到（ac-bd）+（ad+bc）
+	1.x=(a+b)(c+d)=ac+bd+ad+bc	
+	2.y=ac	
+	3.z=bd
+
+	ac-bd=y-z
+	ad+bc=x-y-z
+
+
+	
+
+*/
