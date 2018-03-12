@@ -8,14 +8,14 @@ typedef struct MATRIX
 	int *body;
 }matrix;
 
-void FreeMatrix(matrix *m)
+void FreeMatrix(matrix *m) //释放内存
 {
 	free(m->body);
 	free(m);
 }
 
-//线性代数中简单的矩阵乘法
-matrix *SquareMatrixMultiply(matrix *a,matrix *b)
+//线性代数中简单的矩阵乘法	支持行不等于列	返回一个指针，使用完成后需要手动释放
+matrix *SquareMatrixMultiply(matrix *a,matrix *b)	
 {
 	matrix *sum = (matrix *)malloc(sizeof(matrix));
 	sum->row = a->row;
@@ -62,15 +62,23 @@ void MutiTest()
 	C11=P5+P4-P2+P6		C12=P1+P2	C21=P3+P4	C22=P5+P1-P4-P2
 	*/
 
-matrix *SquareMatrixMultiplyStrassen(matrix a, matrix b)
+
+//将一个矩阵分成四个矩阵
+void DepartAMatrixToFour(matrix *a,matrix *a11,matrix *a12,matrix *a21,matrix *a22)
 {
-	if (a.row == 1 && a.col == 1 && b.row == 1 && b.col == 1)
+
+}
+
+
+matrix *SquareMatrixMultiplyStrassen(matrix *a, matrix *b)
+{
+	if (a->row == 1 && a->col == 1 && b->row == 1 && b->col == 1)
 	{
 		matrix *ret_val = (matrix *)malloc(sizeof(matrix));
 		ret_val->row = 1;
 		ret_val->col = 1;
 		ret_val->body = (int *)malloc(sizeof(int)*ret_val->row*ret_val->col);
-		*ret_val->body = (*a.body)*(*b.body);
+		*ret_val->body = (*a->body)*(*b->body);
 		return ret_val;
 	}
 	else
