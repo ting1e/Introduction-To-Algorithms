@@ -42,6 +42,9 @@
     <ClInclude Include="第六章 堆排序\06_4_堆排序算法.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="第六章 堆排序\06_5_优先队列.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
