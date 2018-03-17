@@ -163,6 +163,7 @@
     <ClInclude Include="第二章 算法基础\02_3_设计算法.h" />
     <ClInclude Include="第六章 堆排序\06_1_堆_2_堆的性质.h" />
     <ClInclude Include="第六章 堆排序\06_3_建堆.h" />
+    <ClInclude Include="第六章 堆排序\06_4_堆排序算法.h" />
     <ClInclude Include="第四章 分治策略\04_1_最大子数组问题.h" />
     <ClInclude Include="第四章 分治策略\04_2_矩阵乘法的Strassen算法.h" />
   </ItemGroup>
