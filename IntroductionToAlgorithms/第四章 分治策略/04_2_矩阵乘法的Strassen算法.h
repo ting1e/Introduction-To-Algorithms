@@ -1,5 +1,5 @@
 #pragma once
-#include "..\bash.h"
+#include "..\base.h"
 
 
 typedef struct MATRIX
@@ -287,7 +287,7 @@ void MutiplyStrassenTest()
 /*
 	练习4.2-3 适应n不是2的幂的情况
 	先找出最大的n的幂次方的子矩阵，然后利用矩阵运算的知识进行运算。
-	等什么时候复习了线性代数的知识在来写代码吧
+	等什么时候复习了线性代数的知识在来写代码吧！！！  嘤嘤嘤
 	练习4.2-3
 	a,b,c,d	三次乘法得到（ac-bd）+（ad+bc）
 	1.x=(a+b)(c+d)=ac+bd+ad+bc	
@@ -296,8 +296,4 @@ void MutiplyStrassenTest()
 
 	ac-bd=y-z
 	ad+bc=x-y-z
-
-
-	
-
 */

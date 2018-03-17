@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "..\bash.h"
+#include "..\base.h"
 
 //本节几乎所有函数都返回一个指针，使用完成后都应该被手动释放
 

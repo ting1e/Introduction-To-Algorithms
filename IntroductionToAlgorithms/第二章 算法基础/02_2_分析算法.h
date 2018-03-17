@@ -1,5 +1,5 @@
 #pragma once
-#include "..\bash.h"
+#include "..\base.h"
 
 /*
 	Ñ¡ÔñÅÅĞòË¼Ïë£º

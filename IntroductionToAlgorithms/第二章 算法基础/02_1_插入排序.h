@@ -1,5 +1,5 @@
 #pragma once
-#include "..\bash.h"
+#include "..\base.h"
 /* 
 插入排序思想：
 		数组中下标 i 表示当前排序的元素，

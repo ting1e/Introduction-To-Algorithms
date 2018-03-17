@@ -18,9 +18,6 @@
     <ClInclude Include="第二章 算法基础\02_1_插入排序.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="bash.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="第二章 算法基础\02_2_分析算法.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -34,6 +31,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="第六章 堆排序\06_1_堆_2_堆的性质.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="base.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第六章 堆排序\06_3_建堆.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

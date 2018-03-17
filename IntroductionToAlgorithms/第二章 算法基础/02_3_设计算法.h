@@ -1,5 +1,5 @@
 #pragma once
-#include "..\bash.h"
+#include "..\base.h"
 
 /*
 	归并排序：对数组进行排序时，先将数组分成两个部分，

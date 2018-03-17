@@ -1,5 +1,5 @@
 #pragma once
-#include "..\bash.h"
+#include "..\base.h"
 
 #define PARENT(i) (i/2)
 #define LEFT(i)	(2*i)
@@ -25,14 +25,13 @@ void MaxHeapify(int a[], int i,int heap_size)
 	int left = LEFT(i);
 	int right = RIGHT(i);
 	int max = i;
-	if (left <= heap_size && right <= heap_size)
+	if (left <= heap_size )
 	{
-		max = (a[left] > a[right] ? left : right);
-		max = a[max] > a[i] ? max : i;
+		max = a[max] > a[left] ? max : left;
 	}
-	else
+	if (right <= heap_size)
 	{
-		max = i;
+		max = a[max] > a[right] ? max : right;
 	}
 	if (max != i)
 	{
@@ -44,23 +43,19 @@ void MaxHeapify(int a[], int i,int heap_size)
 }
 
 
-
-
-
 // 联系6.2-2 最小堆
 void MinHeapify(int a[], int i, int heap_size)
 {
 	int left = LEFT(i);
 	int right = RIGHT(i);
 	int min = i;
-	if (left <= heap_size && right <= heap_size)
+	if (left <= heap_size)
 	{
-		min = (a[left] < a[right] ? left : right);
-		min = a[min] < a[i] ? min : i;
+		min = a[min] < a[left] ? min : left;
 	}
-	else
+	if (right <= heap_size)
 	{
-		min = i;
+		min = a[min] < a[right] ? min : right;
 	}
 	if (min != i)
 	{
@@ -81,14 +76,13 @@ void MaxHeapify_(int a[], int i, int heap_size)
 		i = max;
 		left = LEFT(i);
 		right = RIGHT(i);
-		if (left <= heap_size && right <= heap_size)
+		if (left <= heap_size)
 		{
-			max = (a[left] > a[right] ? left : right);
-			max = a[max] > a[i] ? max : i;
+			max = a[max] > a[left] ? max : left;
 		}
-		else
+		if (right <= heap_size)
 		{
-			max = i;
+			max = a[max] > a[right] ? max : right;
 		}
 
 		int temp = a[max];
@@ -97,10 +91,9 @@ void MaxHeapify_(int a[], int i, int heap_size)
 	} while (max != i);
 }
 
-
 void Test()
 {
 	int a[11] = { 0,16,4,10,14,7,9,3,2,8,1 };
-	MaxHeapify_(a, 2, 10);
+	MaxHeapify(a, 2, 10);
 }
 
