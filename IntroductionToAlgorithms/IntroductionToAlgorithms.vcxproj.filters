@@ -33,6 +33,9 @@
     <ClInclude Include="第四章 分治策略\04_2_矩阵乘法的Strassen算法.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="第六章 堆排序\06_1_堆_2_堆的性质.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
