@@ -27,6 +27,32 @@ int Partition(int a[], int start, int end)	 //point ..
 	a[j] = x;
 	return j;
 }
+//书上所给出的Partition。
+int _Partition(int a[], int p, int r)
+{
+	int x = a[r];
+	int i = p - 1;
+	for (int j = p; j < r; j++)
+	{
+		if (a[j] <= x)
+		{
+			i++;
+			int temp = a[i];
+			a[i] = a[j];
+			a[j] = temp;
+		}
+	}
+	a[r] = a[i + 1];
+	a[i + 1] = x;
+
+	/*
+		练习7.1-2
+		if((i+2)==x)
+			return (p+r)/2;
+	*/
+	return i + 1;
+}
+
 
 void QuickSort(int a[], int start, int end)
 {
