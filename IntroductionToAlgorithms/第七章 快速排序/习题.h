@@ -78,6 +78,7 @@ void TailRecursiveQuickSort(int a[], int start, int end)
 	}
 }
 
+//Œ≤µ›πÈ”≈ªØ
 void  OptimizeTailQuickSort(int a[], int start, int end)
 {
 	while (start<end)
