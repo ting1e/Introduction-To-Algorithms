@@ -159,6 +159,8 @@
   <ItemGroup>
     <ClInclude Include="base.h" />
     <ClInclude Include="第七章 快速排序\07_1_快速排序的描述.h" />
+    <ClInclude Include="第七章 快速排序\07_3_快速排序的随机化版本.h" />
+    <ClInclude Include="第七章 快速排序\习题.h" />
     <ClInclude Include="第二章 算法基础\02_1_插入排序.h" />
     <ClInclude Include="第二章 算法基础\02_2_分析算法.h" />
     <ClInclude Include="第二章 算法基础\02_3_设计算法.h" />

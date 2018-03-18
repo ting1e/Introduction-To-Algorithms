@@ -66,6 +66,6 @@ void QuickSort(int a[], int start, int end)
 
 void QuickSortTest()
 {
-	int a[] = { 5,6,1,3,7,8,55,3,2,4 };
+	int a[] = { 5,6,1,3,7,8,9,10,2,4 };
 	QuickSort(a, 0, 9);
 }

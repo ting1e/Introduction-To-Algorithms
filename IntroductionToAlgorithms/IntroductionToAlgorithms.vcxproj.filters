@@ -48,6 +48,12 @@
     <ClInclude Include="第七章 快速排序\07_1_快速排序的描述.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="第七章 快速排序\07_3_快速排序的随机化版本.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第七章 快速排序\习题.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
