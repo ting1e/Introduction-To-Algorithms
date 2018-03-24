@@ -54,6 +54,9 @@
     <ClInclude Include="第七章 快速排序\习题.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="第八章 线性时间排序\08_2_计数排序.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
