@@ -165,6 +165,7 @@
     <ClInclude Include="第二章 算法基础\02_2_分析算法.h" />
     <ClInclude Include="第二章 算法基础\02_3_设计算法.h" />
     <ClInclude Include="第八章 线性时间排序\08_2_计数排序.h" />
+    <ClInclude Include="第八章 线性时间排序\08_4_桶排序.h" />
     <ClInclude Include="第六章 堆排序\06_1_堆_2_堆的性质.h" />
     <ClInclude Include="第六章 堆排序\06_3_建堆.h" />
     <ClInclude Include="第六章 堆排序\06_4_堆排序算法.h" />
