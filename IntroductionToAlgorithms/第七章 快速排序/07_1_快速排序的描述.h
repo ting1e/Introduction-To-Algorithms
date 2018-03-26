@@ -27,7 +27,7 @@ int Partition(int a[], int start, int end)	 //point ..
 	a[j] = x;
 	return j;
 }
-//书上所给出的Partition。
+//书上所给出的Partition。	
 int _Partition(int a[], int p, int r)
 {
 	int x = a[r];

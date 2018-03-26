@@ -13,7 +13,7 @@ int Minimum(int a[], int size)
 
 void MaxAndMin(int a[], int size, int *_max, int *_min)
 {
-	int temp_max, temp_min, max, min, length;
+	int temp_max, temp_min, max, min;
 
 	if ((size & 1) == 1)
 	{
