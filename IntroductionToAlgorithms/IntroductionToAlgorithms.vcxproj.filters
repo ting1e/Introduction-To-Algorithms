@@ -63,6 +63,9 @@
     <ClInclude Include="第九章 中位数和顺序统计量\09_1_最大值和最小值.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="第九章 中位数和顺序统计量\09_2_期望为线性时间的选择算法.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">

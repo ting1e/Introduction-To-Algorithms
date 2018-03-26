@@ -37,7 +37,12 @@ void InsertSort(Element *e) //链表插入排序
 	}
 }
 
-void BucketSort(double a[], int size)
+
+/*
+桶排序：
+	将【0，1】区间划分为n个相同大小的子区间或称为桶，然后将这n个数放到各个桶中
+*/
+void BucketSort(double a[], int size)  
 {
 	Element *b = (Element *)malloc(sizeof(Element)*size);
 	for (int i = 0; i < size; i++)
