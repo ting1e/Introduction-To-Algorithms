@@ -1,9 +1,10 @@
+
+#ifndef BASE
+#define BASE
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#ifndef BASE
-#define BASE
 
 int Random(int a, int b)
 {
