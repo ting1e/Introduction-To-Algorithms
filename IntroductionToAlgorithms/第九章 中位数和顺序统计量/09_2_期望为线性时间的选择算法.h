@@ -11,7 +11,7 @@ int RandomizedSelect(int a[], int start, int end, int i)
 	if (start == end)
 		return a[start];
 	int middle = RandomizedPartition(a, start, end);
-	int k = end - start + 1;
+	int k = middle - start + 1;  //shit....
 	if (k == i)
 		return a[middle];
 	else if (i < k)
@@ -33,7 +33,7 @@ int CircleSelect(int a[], int start, int end, int i)
 	while (start<end)
 	{
 		middle = RandomizedPartition(a, start, end);
-		k = end - start + 1;
+		k = middle - start + 1;
 		if (k == i)
 			return a[middle];
 		else if (i < k)
@@ -43,16 +43,16 @@ int CircleSelect(int a[], int start, int end, int i)
 		else
 		{
 			start = middle + 1;
-			k = i - k;
+			i = i - k;
 		}
 	}
-	return start;
+	return a[start];
 }
 
 void RandomizedSelectTest()
 {
 	int a[] = { 5,6,1,3,7,8,9,10,2,4 };
-	int i = RandomizedSelect(a, 0, 9, 7);
+	int i = CircleSelect(a, 0, 9, 1);
 }
 
 /*
