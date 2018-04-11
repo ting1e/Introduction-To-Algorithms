@@ -73,7 +73,7 @@ void InitQueue(struct Queue *Q)
 	Q->tail=0;
 }
 
-int EnQueue(struct Queue *Q,int x)  	//¿ÉÒÔ´¦ÀíÉÏÒçºÍÏÂÒç³ö
+int EnQueue(struct Queue *Q,int x)  	//å¯ä»¥å¤„ç†ä¸Šæº¢å’Œä¸‹æº¢å‡º
 {
 	if((Q->tail+1)%(SIZE-1)==Q->head)
 	{
@@ -106,7 +106,7 @@ int DeQueue(struct Queue *Q,int *x)
 		return 1;
 	}
 }
-// Á·Ï°10.1-5 	ÏÂÃæÁ½¸ö¼ÓÉÏÉÏÃæÁ½¸ö¡£
+// ç»ƒä¹ 10.1-5 	ä¸‹é¢ä¸¤ä¸ªåŠ ä¸Šä¸Šé¢ä¸¤ä¸ªã€‚
 int EnQueueHead(struct Queue *Q,int x) 
 {
 	if((Q->tail+1)%(SIZE-1)==Q->head)
@@ -168,30 +168,30 @@ void QueueTest()
 }
 
 /*
-	Á·Ï°10.1-2 ·Ö±ğÒÔ1ºÍnÎªÕ»µ×£¬´ÓÁ½²àÏòÖĞĞÄÉú³¤¡£
+	ç»ƒä¹ 10.1-2 åˆ†åˆ«ä»¥1å’Œnä¸ºæ ˆåº•ï¼Œä»ä¸¤ä¾§å‘ä¸­å¿ƒç”Ÿé•¿ã€‚
 	
-	Á·Ï°10.1-7
+	ç»ƒä¹ 10.1-7
 	
-	Á½¸öÕ»S1£¬S2  
+	ä¸¤ä¸ªæ ˆS1ï¼ŒS2  
 		Depend on the operation
-	EnQueue(x)		//¦È(1)
+	EnQueue(x)		//Î¸(1)
 		S1.Push(x)
 		
 	Dequeue(x)			  //O(n)	I am not sure about the low boundary.
-							//Guess e[X]==¦È(1)
+							//Guess e[X]==Î¸(1)
 		if  S2 is empty
-			S2.Push(all S1) don't change S1
+			S2.Push(all S1) 
 		else
 			S2.Pop
 		
 		
 		
-	Á·Ï°10.1-8
+	ç»ƒä¹ 10.1-8
 	Q1,Q2 	//let Q1,Q2 circle maybe a good choice 
-	Push(x)				//¦È(1)
+	Push(x)				//Î¸(1)
 		Q1.EnQueue(x)
 		
-	Pop 		//¦È(n)
+	Pop 		//Î¸(n)
 		Q2.EnQueue(all Q1) and record last one 
 		Q1.EnQueue(all Q2 expect last one )
 		return Q2.Dequeue
