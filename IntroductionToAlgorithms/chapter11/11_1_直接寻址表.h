@@ -19,7 +19,7 @@ void DirectAddressInsert(int t[],int x)
 }
 
 /*
- * 	 	
+ *注意本章所有均未测试。。。。。。 	 	
  *
  *
  *
