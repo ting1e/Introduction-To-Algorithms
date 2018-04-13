@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Color	13_红黑树.h	/^enum Color{red,black};$/;"	g
+LeftRotate	13_红黑树.h	/^void LeftRotate(RBTree **root,RBTree *x)$/;"	f	signature:(RBTree **root,RBTree *x)
+RBInsert	13_红黑树.h	/^void RBInsert(RBTree **root,int k)$/;"	f	signature:(RBTree **root,int k)
+RBTREE	13_红黑树.h	/^typedef struct RBTREE$/;"	s
+RBTREE::color	13_红黑树.h	/^	enum Color color;$/;"	m	struct:RBTREE	typeref:enum:RBTREE::Color	access:public
+RBTREE::key	13_红黑树.h	/^	int key;$/;"	m	struct:RBTREE	access:public
+RBTREE::left	13_红黑树.h	/^	struct RBTREE *left;$/;"	m	struct:RBTREE	typeref:struct:RBTREE::RBTREE	access:public
+RBTREE::p	13_红黑树.h	/^	struct RBTREE *p;$/;"	m	struct:RBTREE	typeref:struct:RBTREE::RBTREE	access:public
+RBTREE::right	13_红黑树.h	/^	struct RBTREE *right;$/;"	m	struct:RBTREE	typeref:struct:RBTREE::RBTREE	access:public
+RBTree	13_红黑树.h	/^} RBTree;$/;"	t	typeref:struct:RBTREE
+RightRotate	13_红黑树.h	/^void RightRotate(RBTree *root,RBTree *y)$/;"	f	signature:(RBTree *root,RBTree *y)
+black	13_红黑树.h	/^enum Color{red,black};$/;"	e	enum:Color
+color	13_红黑树.h	/^	enum Color color;$/;"	m	struct:RBTREE	typeref:enum:RBTREE::Color	access:public
+format	tags	/^!_TAG_FILE_FORMAT	2	\/extended format; --format=1 will not append ;" to lines\/$/;"	v
+key	13_红黑树.h	/^	int key;$/;"	m	struct:RBTREE	access:public
+left	13_红黑树.h	/^	struct RBTREE *left;$/;"	m	struct:RBTREE	typeref:struct:RBTREE::RBTREE	access:public
+main	test.c	/^int main()$/;"	f	signature:()
+p	13_红黑树.h	/^	struct RBTREE *p;$/;"	m	struct:RBTREE	typeref:struct:RBTREE::RBTREE	access:public
+red	13_红黑树.h	/^enum Color{red,black};$/;"	e	enum:Color
+right	13_红黑树.h	/^	struct RBTREE *right;$/;"	m	struct:RBTREE	typeref:struct:RBTREE::RBTREE	access:public
+td	a.out	/^/;"	v

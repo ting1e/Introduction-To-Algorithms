@@ -1,0 +1,41 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DeQueue	10_1_栈和队列.h	/^int DeQueue(struct Queue *Q,int *x)$/;"	f	signature:(struct Queue *Q,int *x)
+DeQueueTail	10_1_栈和队列.h	/^int DeQueueTail(struct Queue *Q,int *x)$/;"	f	signature:(struct Queue *Q,int *x)
+EnQueue	10_1_栈和队列.h	/^int EnQueue(struct Queue *Q,int x)  	\/\/���Դ�������������$/;"	f	signature:(struct Queue *Q,int x)
+EnQueueHead	10_1_栈和队列.h	/^int EnQueueHead(struct Queue *Q,int x) $/;"	f	signature:(struct Queue *Q,int x)
+InitQueue	10_1_栈和队列.h	/^void InitQueue(struct Queue *Q)$/;"	f	signature:(struct Queue *Q)
+InitStack	10_1_栈和队列.h	/^void InitStack(struct Stack *S)$/;"	f	signature:(struct Stack *S)
+LIST	10_2_链表.h	/^typedef struct LIST$/;"	s
+LIST::key	10_2_链表.h	/^	int key;$/;"	m	struct:LIST	access:public
+LIST::next	10_2_链表.h	/^	struct LIST *next;$/;"	m	struct:LIST	typeref:struct:LIST::LIST	access:public
+LIST::prev	10_2_链表.h	/^	struct LIST *prev;$/;"	m	struct:LIST	typeref:struct:LIST::LIST	access:public
+LinkList	10_2_链表.h	/^} LinkList;$/;"	t	typeref:struct:LIST
+ListSearch	10_2_链表.h	/^LinkList *ListSearch(LinkList *l,int k)$/;"	f	signature:(LinkList *l,int k)
+Pop	10_1_栈和队列.h	/^int Pop(struct Stack *S,int *x)$/;"	f	signature:(struct Stack *S,int *x)
+Push	10_1_栈和队列.h	/^int Push(struct Stack *S,int x)$/;"	f	signature:(struct Stack *S,int x)
+Queue	10_1_栈和队列.h	/^struct Queue$/;"	s
+Queue::ele	10_1_栈和队列.h	/^	int ele[SIZE];$/;"	m	struct:Queue	access:public
+Queue::head	10_1_栈和队列.h	/^	int head;$/;"	m	struct:Queue	access:public
+Queue::tail	10_1_栈和队列.h	/^	int tail;$/;"	m	struct:Queue	access:public
+QueueTest	10_1_栈和队列.h	/^void QueueTest()$/;"	f	signature:()
+SIZE	10_1_栈和队列.h	3;"	d
+Stack	10_1_栈和队列.h	/^struct Stack$/;"	s
+Stack::ele	10_1_栈和队列.h	/^	int ele[SIZE];$/;"	m	struct:Stack	access:public
+Stack::top	10_1_栈和队列.h	/^	int top;$/;"	m	struct:Stack	access:public
+StackEmpty	10_1_栈和队列.h	/^int StackEmpty(struct Stack *S)$/;"	f	signature:(struct Stack *S)
+StackTest	10_1_栈和队列.h	/^void StackTest()$/;"	f	signature:()
+ele	10_1_栈和队列.h	/^	int ele[SIZE];$/;"	m	struct:Queue	access:public
+ele	10_1_栈和队列.h	/^	int ele[SIZE];$/;"	m	struct:Stack	access:public
+format	tags	/^!_TAG_FILE_FORMAT	2	\/extended format; --format=1 will not append ;" to lines\/$/;"	v
+head	10_1_栈和队列.h	/^	int head;$/;"	m	struct:Queue	access:public
+key	10_2_链表.h	/^	int key;$/;"	m	struct:LIST	access:public
+main	test.c	/^int main()$/;"	f	signature:()
+next	10_2_链表.h	/^	struct LIST *next;$/;"	m	struct:LIST	typeref:struct:LIST::LIST	access:public
+prev	10_2_链表.h	/^	struct LIST *prev;$/;"	m	struct:LIST	typeref:struct:LIST::LIST	access:public
+tail	10_1_栈和队列.h	/^	int tail;$/;"	m	struct:Queue	access:public
+top	10_1_栈和队列.h	/^	int top;$/;"	m	struct:Stack	access:public

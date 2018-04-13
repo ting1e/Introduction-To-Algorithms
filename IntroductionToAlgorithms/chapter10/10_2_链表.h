@@ -50,3 +50,13 @@ int ListDelete(LinkList **l,int x)
 		return 1;
 	}
 }
+
+
+
+
+
+
+
+
+
+
