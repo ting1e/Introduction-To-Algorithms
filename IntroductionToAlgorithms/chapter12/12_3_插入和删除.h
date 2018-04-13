@@ -7,7 +7,7 @@ void TreeInsert(BSTree **root,int z)
 	while(x!=NULL)
 	{
 		y=x;
-		if(x->key<=z)
+		if(x->key>=z)
 		{
 			x=x->left;
 		}
@@ -38,3 +38,106 @@ void TreeInsert(BSTree **root,int z)
 	}
 		
 }
+
+
+void Transplant(BSTree **root,BSTree *u,BSTree *v)
+{
+	if(u->p==NULL)
+	{
+		*root=v;
+	}
+	else if(u==u->p->left)
+	{
+		u->p->left=v;
+	}
+	else
+	{
+		u->p->right=v;
+	}
+	if(v!=NULL)
+	{
+		v->p=u->p;
+	}
+}
+
+void TreeDelete(BSTree **root,int k)
+{
+	BSTree *z=IterativeTreeSearch(*root,k);
+	if(z==NULL)
+	{
+		return;
+	}
+
+	if(z->left==NULL)
+	{
+		Transplant(root,z,z->right);
+	}
+	else if(z->right==NULL)
+	{
+		Transplant(root,z,z->left);
+	}
+	else
+	{
+		BSTree *y=TreeMinimum(z->right);
+		if(y->p!=z)
+		{
+			Transplant(root,y,y->right);
+			y->right=z->right;
+			y->right->p=y;
+		}
+		Transplant(root,z,z->right);
+		y->left=z->left;
+		y->left->p=y;
+	}
+	free(z);
+}
+
+//练习 12.3-12 	树插入的一个递归版本
+void MyTreeInsert(BSTree **t,BSTree *p,int k)
+{
+	if(*t==NULL)
+	{
+		(*t)=(BSTree *)malloc(sizeof(BSTree));
+		(*t)->key=k;
+		(*t)->left=NULL;
+		(*t)->right=NULL;
+		(*t)->p=p;
+		if(p!=NULL)
+		{
+			if(p->key<k)
+				p->right=*t;
+			else
+				p->left=*t;
+		}
+		return;
+	}
+	else if((*t)->key>k)
+	{
+		MyTreeInsert(&((*t)->left),*t,k);
+	}
+	else
+	{
+		MyTreeInsert(&((*t)->right),*t,k);
+	}
+}
+
+
+//12.3-3 n*n    nlogn
+//
+//
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -79,11 +79,11 @@ void InorderNoRecursion(BSTree *root)
 BSTree *TreeSearch(BSTree *root,int k)
 {
 	//递归版本
-/*	if(root==NULL||root->key==k)
+	if(root==NULL||root->key==k)
 	{
 		return root;
 	}
-	if(k<root.key)
+	if(k<root->key)
 	{
 		return TreeSearch(root->left,k);
 	}
@@ -91,10 +91,11 @@ BSTree *TreeSearch(BSTree *root,int k)
 	{
 		return TreeSearch(root->right,k);
 	}
+}
 
-*/
-	//非递归版本
-	//
+//迭代版本
+BSTree *IterativeTreeSearch(BSTree *root,int k)
+{
 	while(root!=NULL&&k!=root->key)
 	{
 		if(k<root->key)
@@ -106,7 +107,7 @@ BSTree *TreeSearch(BSTree *root,int k)
 			root=root->right;
 		}
 	}
-	return x;
+	return root;
 }
 
 BSTree *TreeMinimum(BSTree *root)
@@ -166,7 +167,7 @@ BSTree *TreeMinimum1(BSTree *root)
 {
 	if(root->left)
 	{
-		TreeMaximum1(root->left)
+		TreeMinimum1(root->left);
 	}
 	else
 	{

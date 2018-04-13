@@ -1,4 +1,4 @@
-#include "12_BST.h"
+#include "12_3_插入和删除.h"
 
 int main()
 {
@@ -9,6 +9,27 @@ int main()
 
 	InorderNoRecursion(root);
 
+	printf("\n");
+	TreeInsert(&root,30);
+	TreeInsert(&root,1);
+	InorderTreeWalk(root);
+	printf("\n");
+
+	TreeDelete(&root,1);
+	TreeDelete(&root,3);
+	TreeDelete(&root,20);
+	TreeDelete(&root,30);
+	InorderTreeWalk(root);
+	printf("\n");
+	
+	MyTreeInsert(&root,NULL,1);
+	MyTreeInsert(&root,NULL,3);
+	MyTreeInsert(&root,NULL,30);
+	InorderTreeWalk(root);
+	printf("\n");
+
 	return 0;
+
+
 
 }
