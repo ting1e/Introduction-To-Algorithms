@@ -229,7 +229,111 @@ RBTree *RBMinimum(RBTree *x)
 }
 
 
+void RBDeleteFixup(RBTree **root,RBTree *x)
+{
+	RBTree *w=NULL;
+	while(x!=NULL&&x->color==black)
+	{
+		if(x==x->p->left)
+		{
+			w=x->p->right;
+			if(w->color==red)
+			{
+				w->color=black;
+				x->p->color=red;
+				LeftRotate(root,x->p);
+				w=x->p->right;
+			}
+			if(w->left->color==black&&w->right->color==black)
+			{
+				w->color=red;
+				x=x->p;
+			}
+			else if(w->right->color==black)
+			{
+				w->left->color=black;
+				w->color=red;
+				RightRotate(root,w);
+				w=x->p->right;
+			}
+			w->color=x->p->color;
+			x->p->color=black;
+			w->right->color=black;
+			LeftRotate(root,x->p);
+			x=*root;
+		}
+		else
+		{
 
+			w=x->p->left;
+			if(w->color==red)
+			{
+				w->color=black;
+				x->p->color=red;
+				LeftRotate(root,x->p);
+				w=x->p->left;
+			}
+			if(w->right->color==black&&w->left->color==black)
+			{
+				w->color=red;
+				x=x->p;
+			}
+			else if(w->left->color==black)
+			{
+				w->right->color=black;
+				w->color=red;
+				RightRotate(root,w);
+				w=x->p->left;
+			}
+			w->color=x->p->color;
+			x->p->color=black;
+			w->left->color=black;
+			LeftRotate(root,x->p);
+			x=*root;
+		}
+	}
+	x->color=black;
+}
+
+
+void RBDelete(RBTree **root,RBTree *z)
+{
+	RBTree *y=z;
+	RBTree *x=NULL;
+	enum Color y_color=y->color;
+	if(z->left==NULL)
+	{
+		x=z->right;
+		RBTransplant(root,z,z->right);
+	}
+	else if(z->right==NULL)
+	{
+		x=z->left;
+		RBTransplant(root,z,z->left);
+	}
+	else
+	{
+		y=RBMinimum(z->right);
+		y_color=y->color;
+		x=y->right;
+		if (y->p==z)
+			x->p=y;
+		else
+		{
+			RBTransplant(root,y,y->right);
+			y->right=z->right;
+			y->right->p=y;
+		}
+		RBTransplant(root,z,y);
+		y->left==z->left;
+		y->left->p=y;
+		y->color=z->color;
+	}
+	if(y_color==black)
+	{
+		RBDeleteFixup(root,x);
+	}
+}
 
 
 

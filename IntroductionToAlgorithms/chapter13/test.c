@@ -18,9 +18,15 @@ int main()
 	RBInsert(&tree,6);
 	InOrder(tree);
 	printf("\n");
-
-
-
+	
+	int i;
+	for(i=1;i<20;i++)
+	{
+		RBInsert(&tree,i);
+		if(i%5==0)
+			InOrder(tree);
+		printf("\n");
+	}
 
 	return 0;
 }
