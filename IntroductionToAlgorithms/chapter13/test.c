@@ -5,13 +5,19 @@ int main()
 {
 	RBTree *tree=NULL;
 	RBInsert(&tree,19);
+
 	RBInsert(&tree,3);
-	RBInsert(&tree,5);
-	RBInsert(&tree,6);
-
 	InOrder(tree);
+	printf("\n");
+
+	RBInsert(&tree,5);
+	InOrder(tree);
+	printf("\n");
 
 
+	RBInsert(&tree,6);
+	InOrder(tree);
+	printf("\n");
 
 
 
