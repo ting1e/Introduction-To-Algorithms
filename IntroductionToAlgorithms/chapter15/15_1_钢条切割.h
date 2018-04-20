@@ -88,7 +88,7 @@ int *ExtendedBottomUpCutRod(int p[],int n,int *t)
 	*t=r[n];
 	return s;
 }
-
+//打印
 void PrintCutRodSolution(int p[],int n)
 {
 	int r;
