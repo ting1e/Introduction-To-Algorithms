@@ -13,6 +13,7 @@ int main()
 	pi=BottomUpRod(p,10);
 	printf("10: price %d\n ",pi);
 
+
 	PrintCutRodSolution(p,9);
 
 	return 0;
