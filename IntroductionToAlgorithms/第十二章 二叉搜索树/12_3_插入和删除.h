@@ -1,3 +1,5 @@
+#pragma once
+#include "..\base.h"
 #include "12_1_建立_2_查询BST.h"
 
 void TreeInsert(BSTree **root,int z)

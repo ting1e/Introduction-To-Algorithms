@@ -1,9 +1,9 @@
-#inlcude "../base.h"
-
+#pragma once
+#include "..\base.h"
 // 散列表
 
 #define SIZE 100
-#define (x).key (x)
+#define ((x).key) (x)
 
 
 int t[SIZE];

@@ -107,7 +107,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
@@ -172,6 +172,17 @@
     <ClInclude Include="第六章 堆排序\06_3_建堆.h" />
     <ClInclude Include="第六章 堆排序\06_4_堆排序算法.h" />
     <ClInclude Include="第六章 堆排序\06_5_优先队列.h" />
+    <ClInclude Include="第十一章 散列表\11_1_直接寻址表.h" />
+    <ClInclude Include="第十一章 散列表\11_2_散列表.h" />
+    <ClInclude Include="第十一章 散列表\11_3_散列函数.h" />
+    <ClInclude Include="第十三章 红黑树\13_红黑树.h" />
+    <ClInclude Include="第十三章 红黑树\test.h" />
+    <ClInclude Include="第十二章 二叉搜索树\12_1_建立_2_查询BST.h" />
+    <ClInclude Include="第十二章 二叉搜索树\12_3_插入和删除.h" />
+    <ClInclude Include="第十二章 二叉搜索树\test.h" />
+    <ClInclude Include="第十五章 动态规划\15_1_钢条切割.h" />
+    <ClInclude Include="第十章 基本数据结构\10_1_栈和队列.h" />
+    <ClInclude Include="第十章 基本数据结构\10_2_链表.h" />
     <ClInclude Include="第四章 分治策略\04_1_最大子数组问题.h" />
     <ClInclude Include="第四章 分治策略\04_2_矩阵乘法的Strassen算法.h" />
   </ItemGroup>

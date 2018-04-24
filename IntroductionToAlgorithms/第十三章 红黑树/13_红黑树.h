@@ -1,6 +1,5 @@
-#include "..//base.h"
-
-
+#pragma once
+#include "..\base.h"
 //假设所有NULL都为黑色叶子节点
 
 enum Color{red,black};
@@ -18,7 +17,7 @@ typedef struct RBTREE
 
 void InOrder(RBTree *root)
 {
-	static char *_color[]={"red","black"};
+	static char _color[2][6]={"red","black"};
 	if(root!=NULL)
 	{
 		InOrder(root->left);

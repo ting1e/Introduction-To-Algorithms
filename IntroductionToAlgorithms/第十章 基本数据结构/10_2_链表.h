@@ -1,5 +1,5 @@
-#include "..//base.h"
-
+#pragma once
+#include "..\base.h"
 //双向链表、、 
 //前面几种都是简单的双向链表
 //

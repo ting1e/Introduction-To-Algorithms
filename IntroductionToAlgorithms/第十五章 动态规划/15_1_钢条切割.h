@@ -37,7 +37,7 @@ int MemorizedCutRodAux(int p[],int n,int r[])
 int MemoizedCutRod(int p[],int n)
 {
 	int i;
-	int r[n];
+	int r[100];
 	for(i=0;i<=n;i++)
 	{
 		r[i]=-1;
@@ -104,7 +104,7 @@ void PrintCutRodSolution(int p[],int n)
 
 
 
-void test
+void test()
 {
 	int p[] = { 0,1,5,8,9,10,17,17,20,24,30 };
 	int pi;

@@ -66,6 +66,39 @@
     <ClInclude Include="第九章 中位数和顺序统计量\09_2_期望为线性时间的选择算法.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="第十二章 二叉搜索树\12_1_建立_2_查询BST.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第十二章 二叉搜索树\12_3_插入和删除.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第十二章 二叉搜索树\test.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第十三章 红黑树\13_红黑树.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第十三章 红黑树\test.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第十五章 动态规划\15_1_钢条切割.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第十一章 散列表\11_1_直接寻址表.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第十一章 散列表\11_2_散列表.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第十一章 散列表\11_3_散列函数.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第十章 基本数据结构\10_1_栈和队列.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第十章 基本数据结构\10_2_链表.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">

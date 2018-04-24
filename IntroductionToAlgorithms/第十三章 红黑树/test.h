@@ -1,5 +1,6 @@
+#pragma once
+#include "..\base.h"
 #include "13_红黑树.h"
-
 
 void test()
 {

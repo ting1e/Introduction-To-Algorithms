@@ -1,6 +1,5 @@
-#include "..//base.h"
-
-
+#pragma once
+#include "..\base.h"
 
 typedef struct BINARYSEARCHTREE
 {

@@ -1,4 +1,5 @@
-#include <stdio.h>
+#pragma once
+#include "..\base.h"
 
 #define SIZE 50
 

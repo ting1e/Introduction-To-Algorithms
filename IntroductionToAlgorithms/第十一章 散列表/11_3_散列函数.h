@@ -1,4 +1,5 @@
-
+#pragma once
+#include "..\base.h"
 
 //除法散列函数
 
