@@ -1,7 +1,7 @@
 #include "13_红黑树.h"
 
 
-int main()
+void test()
 {
 	RBTree *tree=NULL;
 	RBInsert(&tree,19);
@@ -27,6 +27,4 @@ int main()
 			InOrder(tree);
 		printf("\n");
 	}
-
-	return 0;
 }

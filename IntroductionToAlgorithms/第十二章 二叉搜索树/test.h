@@ -1,6 +1,6 @@
 #include "12_3_插入和删除.h"
 
-int main()
+void test
 {
 	int a[10]={15,6,18,3,13,17,20,2,4,7};
 	BSTree *root =BuildTree(NULL,a,0,10);
@@ -27,9 +27,5 @@ int main()
 	MyTreeInsert(&root,NULL,30);
 	InorderTreeWalk(root);
 	printf("\n");
-
-	return 0;
-
-
 
 }
