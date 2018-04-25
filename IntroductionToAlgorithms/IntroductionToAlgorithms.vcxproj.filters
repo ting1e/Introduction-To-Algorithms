@@ -99,6 +99,9 @@
     <ClInclude Include="第十章 基本数据结构\10_2_链表.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="第十五章 动态规划\15_4_最长公共子序列.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">

@@ -180,6 +180,7 @@
     <ClInclude Include="第十二章 二叉搜索树\12_1_建立_2_查询BST.h" />
     <ClInclude Include="第十二章 二叉搜索树\12_3_插入和删除.h" />
     <ClInclude Include="第十二章 二叉搜索树\test.h" />
+    <ClInclude Include="第十五章 动态规划\15_4_最长公共子序列.h" />
     <ClInclude Include="第十五章 动态规划\15_1_钢条切割.h" />
     <ClInclude Include="第十章 基本数据结构\10_1_栈和队列.h" />
     <ClInclude Include="第十章 基本数据结构\10_2_链表.h" />
