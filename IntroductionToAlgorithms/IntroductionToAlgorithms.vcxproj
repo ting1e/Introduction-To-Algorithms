@@ -186,6 +186,8 @@
     <ClInclude Include="第10章 基本数据结构\10_2_链表.h" />
     <ClInclude Include="第04章 分治策略\04_1_最大子数组问题.h" />
     <ClInclude Include="第04章 分治策略\04_2_矩阵乘法的Strassen算法.h" />
+    <ClInclude Include="第16章 贪心算法\16_1_活动选择问题.h" />
+    <ClInclude Include="第16章 贪心算法\16_2_贪心算法原理.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
