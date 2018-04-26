@@ -15,91 +15,91 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="第二章 算法基础\02_1_插入排序.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="第二章 算法基础\02_2_分析算法.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="第二章 算法基础\02_3_设计算法.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="第四章 分治策略\04_1_最大子数组问题.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="第四章 分治策略\04_2_矩阵乘法的Strassen算法.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="第六章 堆排序\06_1_堆_2_堆的性质.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="base.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第六章 堆排序\06_3_建堆.h">
+    <ClInclude Include="第08章 线性时间排序\08_2_计数排序.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第六章 堆排序\06_4_堆排序算法.h">
+    <ClInclude Include="第08章 线性时间排序\08_4_桶排序.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第六章 堆排序\06_5_优先队列.h">
+    <ClInclude Include="第02章 算法基础\02_1_插入排序.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第七章 快速排序\07_1_快速排序的描述.h">
+    <ClInclude Include="第02章 算法基础\02_2_分析算法.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第七章 快速排序\07_3_快速排序的随机化版本.h">
+    <ClInclude Include="第02章 算法基础\02_3_设计算法.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第八章 线性时间排序\08_2_计数排序.h">
+    <ClInclude Include="第09章 中位数和顺序统计量\09_1_最大值和最小值.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第八章 线性时间排序\08_4_桶排序.h">
+    <ClInclude Include="第09章 中位数和顺序统计量\09_2_期望为线性时间的选择算法.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第七章 快速排序\07_习题.h">
+    <ClInclude Include="第06章 堆排序\06_1_堆_2_堆的性质.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第九章 中位数和顺序统计量\09_1_最大值和最小值.h">
+    <ClInclude Include="第06章 堆排序\06_3_建堆.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第九章 中位数和顺序统计量\09_2_期望为线性时间的选择算法.h">
+    <ClInclude Include="第06章 堆排序\06_4_堆排序算法.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第十二章 二叉搜索树\12_1_建立_2_查询BST.h">
+    <ClInclude Include="第06章 堆排序\06_5_优先队列.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第十二章 二叉搜索树\12_3_插入和删除.h">
+    <ClInclude Include="第07章 快速排序\07_1_快速排序的描述.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第十二章 二叉搜索树\test.h">
+    <ClInclude Include="第07章 快速排序\07_3_快速排序的随机化版本.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第十三章 红黑树\13_红黑树.h">
+    <ClInclude Include="第07章 快速排序\07_习题.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第十五章 动态规划\15_1_钢条切割.h">
+    <ClInclude Include="第12章 二叉搜索树\12_1_建立_2_查询BST.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第十一章 散列表\11_1_直接寻址表.h">
+    <ClInclude Include="第12章 二叉搜索树\12_3_插入和删除.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第十一章 散列表\11_2_散列表.h">
+    <ClInclude Include="第12章 二叉搜索树\test.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第十一章 散列表\11_3_散列函数.h">
+    <ClInclude Include="第13章 红黑树\13_红黑树.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第十章 基本数据结构\10_1_栈和队列.h">
+    <ClInclude Include="第15章 动态规划\15_1_钢条切割.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第十章 基本数据结构\10_2_链表.h">
+    <ClInclude Include="第15章 动态规划\15_4_最长公共子序列.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第十五章 动态规划\15_4_最长公共子序列.h">
+    <ClInclude Include="第15章 动态规划\15_5_最优二叉树.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="第十五章 动态规划\15_5_最优二叉树.h">
+    <ClInclude Include="第11章 散列表\11_1_直接寻址表.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第11章 散列表\11_2_散列表.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第11章 散列表\11_3_散列函数.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第10章 基本数据结构\10_1_栈和队列.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第10章 基本数据结构\10_2_链表.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第04章 分治策略\04_1_最大子数组问题.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第04章 分治策略\04_2_矩阵乘法的Strassen算法.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
