@@ -1,5 +1,6 @@
-#pragma once
-#include "..\base.h"
+#include "..//base.h"
+
+
 //假设所有NULL都为黑色叶子节点
 
 enum Color{red,black};
@@ -12,6 +13,25 @@ typedef struct RBTREE
 	struct RBTREE *right;
 	struct RBTREE *p;
 } RBTree;
+
+//红黑书搜索节点
+RBTree *TreeSearch(RBTree *root, int k)
+{
+	while (root != NULL && k != root->key)
+	{
+		if (k<root->key)
+		{
+			root = root->left;
+		}
+		else
+		{
+			root = root->right;
+		}
+	}
+	return root;
+}
+
+
 
 //中序遍历
 
@@ -214,7 +234,8 @@ void RBTransplant(RBTree **root,RBTree *u,RBTree *v)
 	{
 		u->p->right=v;
 	}
-	v->p=u->p;
+	if (v != NULL)
+		v->p = u->p;
 }
 
 
@@ -291,12 +312,16 @@ void RBDeleteFixup(RBTree **root,RBTree *x)
 			x=*root;
 		}
 	}
-	x->color=black;
+	if (x != NULL)
+		x->color = black;
 }
 
 
-void RBDelete(RBTree **root,RBTree *z)
+void RBDelete(RBTree **root,int k)
 {
+	RBTree *z = TreeSearch(*root, k);
+	if (z == NULL)
+		return;
 	RBTree *y=z;
 	RBTree *x=NULL;
 	enum Color y_color=y->color;
@@ -324,7 +349,7 @@ void RBDelete(RBTree **root,RBTree *z)
 			y->right->p=y;
 		}
 		RBTransplant(root,z,y);
-		y->left==z->left;
+		y->left=z->left;
 		y->left->p=y;
 		y->color=z->color;
 	}
@@ -337,7 +362,34 @@ void RBDelete(RBTree **root,RBTree *z)
 
 
 
+void test()
+{
+	RBTree *tree = NULL;
+	RBInsert(&tree, 19);
+
+	RBInsert(&tree, 3);
+	InOrder(tree);
+	printf("\n");
+
+	RBInsert(&tree, 5);
+	InOrder(tree);
+	printf("\n");
 
 
+	RBInsert(&tree, 6);
+	InOrder(tree);
+	printf("\n");
 
+	int i;
+	for (i = 1; i<20; i++)
+	{
+		RBInsert(&tree, i);
+		if (i % 5 == 0)
+			InOrder(tree);
+		printf("\n");
+	}
 
+	RBDelete(&tree, 1);
+
+	InOrder(tree);
+}
