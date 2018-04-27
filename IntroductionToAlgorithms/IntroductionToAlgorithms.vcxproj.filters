@@ -108,6 +108,9 @@
     <ClInclude Include="第16章 贪心算法\16_2_贪心算法原理.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="第16章 贪心算法\16_3_哈夫曼编码.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
