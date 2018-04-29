@@ -1,9 +1,9 @@
 #pragma once
-#include "22_1_Í¼µÄ±íÊ¾.h"
+#include "22_1_å›¾çš„è¡¨ç¤º.h"
 
 #define TYPE VNode*
 
-#include "../µÚ10ÕÂ »ù±¾Êı¾İ½á¹¹/10_1_Õ»ºÍ¶ÓÁĞ.h"
+#include "../ç¬¬10ç«  åŸºæœ¬æ•°æ®ç»“æ„/10_1_æ ˆå’Œé˜Ÿåˆ—.h"
 
 void PrintPath(LGraph *G, VNode *s, VNode *v)
 {
@@ -18,12 +18,11 @@ void PrintPath(LGraph *G, VNode *s, VNode *v)
 	}
 }
 
-//¹ã¶ÈÓÅÏÈ±éÀú 
+//å¹¿åº¦ä¼˜å…ˆéå† 
 void BFS(LGraph* G, VNode* s)
 {
 	VNode* u;
-	int i;
-	for (i = 0; i < G->vexnum; i++)
+	int i;	for (i = 0; i < G->vexnum; i++)
 	{
 		G->vexs[i].color = white;
 		G->vexs[i].d = INT_MAX;
@@ -61,10 +60,10 @@ void test()
 {
 	/*
 		r  --  s      t  --  u
-		|	   |   /  |   /  |
+		|      |   /  |   /  |
 		v      w  --  x  --  y
 	
-		 s ¿ªÊ¼¡£
+		 s å¼€å§‹ã€‚
 	*/
 
 	LGraph G;
