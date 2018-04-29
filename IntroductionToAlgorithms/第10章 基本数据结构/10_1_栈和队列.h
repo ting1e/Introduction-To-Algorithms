@@ -1,7 +1,10 @@
 #pragma once
-#include "..\base.h"
+#include "..//base.h"
 
-#define SIZE 50
+#ifndef TYPE
+	#define TYPE int 
+#endif // !TYPE
+
 
 struct Stack
 {
@@ -57,14 +60,14 @@ void StackTest()
 	Push(&S,51);
 	Pop(&S,&a);
 	Pop(&S,&b);
-	printf("%d\n",c);
+	printf("%d\n",a);
 	Pop(&S,&c);
 	printf("%d  %d  %d ",a,b,c);
 }
 
 struct Queue
 {
-	int ele[SIZE];
+	TYPE ele[SIZE];
 	int head;
 	int tail;
 };
@@ -74,7 +77,7 @@ void InitQueue(struct Queue *Q)
 	Q->tail=0;
 }
 
-int EnQueue(struct Queue *Q,int x)  	//可以处理上溢和下溢出
+int EnQueue(struct Queue *Q, TYPE x)  	//可以处理上溢和下溢出
 {
 	if((Q->tail+1)%(SIZE-1)==Q->head)
 	{
@@ -91,7 +94,7 @@ int EnQueue(struct Queue *Q,int x)  	//可以处理上溢和下溢出
 	}
 }
 
-int DeQueue(struct Queue *Q,int *x)
+int DeQueue(struct Queue *Q, TYPE *x)
 {
 	if(Q->head==Q->tail)
 	{
@@ -108,7 +111,7 @@ int DeQueue(struct Queue *Q,int *x)
 	}
 }
 // 练习10.1-5 	下面两个加上上面两个。
-int EnQueueHead(struct Queue *Q,int x) 
+int EnQueueHead(struct Queue *Q, TYPE x)
 {
 	if((Q->tail+1)%(SIZE-1)==Q->head)
 	{
@@ -125,7 +128,7 @@ int EnQueueHead(struct Queue *Q,int x)
 	}
 }
 
-int DeQueueTail(struct Queue *Q,int *x)
+int DeQueueTail(struct Queue *Q, TYPE *x)
 {
 	if(Q->head==Q->tail)
 	{
@@ -143,12 +146,12 @@ int DeQueueTail(struct Queue *Q,int *x)
 }
 
 
-
+/*
 void QueueTest()
 {
 	struct Queue Q;
-	int x;
-	int i=1;
+	TYPE x;
+	TYPE i=1;
 	InitQueue(&Q);
 	while(EnQueue(&Q,i))
 	{
@@ -167,6 +170,7 @@ void QueueTest()
 	}
 	
 }
+*/
 
 /*
 	练习10.1-2 分别以1和n为栈底，从两侧向中心生长。
