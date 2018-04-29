@@ -1,71 +1,57 @@
 #pragma once
-#include "22_1_å›¾çš„è¡¨ç¤º.h"
+#include "22_1_Í¼µÄ±íÊ¾.h"
 
-#define TYPE VNode*
+//Éî¶ÈÓÅÏÈ±éÀú£¬Ò»ÌõµÀ×ßµ½ºÚ¡£
 
-#include "../ç¬¬10ç«  åŸºæœ¬æ•°æ®ç»“æ„/10_1_æ ˆå’Œé˜Ÿåˆ—.h"
-
-
-
-void PrintPath(LGraph *G, VNode *s, VNode *v)
+void DFSVisit(LGraph *G, VNode* u, int time)
 {
-	if (v == s)
-		printf("%c", s->data);
-	else if (v->pre == NULL)
-		printf("no path from s to v exists");
-	else
+	time++;
+	u->d = time;
+	u->color = gray;
+	ENode *edge = u->first_edge;
+	printf("%c ", u->data);
+	while (edge!=NULL)
 	{
-		PrintPath(G, s, v->pre);
-		printf("%c", v->data);
+		if (G->vexs[edge->ivex].color == white)
+		{
+			G->vexs[edge->ivex].pre = u;
+			DFSVisit(G, &G->vexs[edge->ivex], time);
+		}
+		edge = edge->next_edge;
 	}
+	u->color = black;
+	time++;
+	u->f = time;
 }
 
-//å¹¿åº¦ä¼˜å…ˆéå†  é›¨éœ²å‡æ²¾
-void BFS(LGraph* G, VNode* s)
+
+
+void DFS(LGraph * G)
 {
-	VNode* u;
-	int i;	for (i = 0; i < G->vexnum; i++)
+	for (int i = 0; i < G->vexnum; i++)
 	{
 		G->vexs[i].color = white;
-		G->vexs[i].d = INT_MAX;
 		G->vexs[i].pre = NULL;
 	}
-	s->color = gray;
-	s->pre = NULL;
-	s->d = 0;
-	printf("%c ",s->data);
-	struct Queue queue;
-	InitQueue(&queue);
-	EnQueue(&queue, s);
-	while (queue.head != queue.tail)  //é˜Ÿåˆ—éç©º
+	int time = 0;
+	for (int i = 0; i < G->vexnum; i++)
 	{
-		DeQueue(&queue, &u);
-		ENode *edge = u->first_edge;
-		while (edge!=NULL)
+		if (G->vexs[i].color == white)
 		{
-			if (G->vexs[edge->ivex].color == white)
-			{
-				printf("%c ", G->vexs[edge->ivex].data);
-				G->vexs[edge->ivex].color = gray;
-				G->vexs[edge->ivex].d = u->d + 1;
-				G->vexs[edge->ivex].pre = u;
-				EnQueue(&queue, &G->vexs[edge->ivex]);
-			}
-			edge = edge->next_edge;
+			DFSVisit(G, &G->vexs[i], time);
 		}
-		u->color = black;
 	}
 
- }
+}
 
 void test()
 {
 	/*
-		r  --  s      t  --  u
-		|      |   /  |   /  |
-		v      w  --  x  --  y
-	
-		 s å¼€å§‹ã€‚
+	r  --  s      t  --  u
+	|      |   /  |   /  |
+	v      w  --  x  --  y
+
+	s ¿ªÊ¼¡£
 	*/
 
 	LGraph G;
@@ -201,6 +187,6 @@ void test()
 	G.vexs[7] = node_y;
 
 
-	BFS(&G, &G.vexs[2]);
-	PrintPath(&G, &G.vexs[2], &G.vexs[6]);
+	DFS(&G);
+
 }

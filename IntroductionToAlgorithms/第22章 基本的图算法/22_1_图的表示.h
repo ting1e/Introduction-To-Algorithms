@@ -17,8 +17,10 @@ typedef struct _VNode
 	char data;              // 顶点信息
 	enum Color color;		//颜色
 	struct _VNode *pre;		//前驱结点
-	int d;					//源节点到当前节点的距离
 
+	int d;					//源节点到当前节点的距离
+	int f;
+	//  dfs中 d 开始时间，f 结束时间。
 	ENode *first_edge;      // 指向第一条依附该顶点的弧
 }VNode;
 
