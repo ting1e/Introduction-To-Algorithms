@@ -120,6 +120,9 @@
     <ClInclude Include="第22章 基本的图算法\22_3_深度优先搜索.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="第18章 B树\18_2_B树上的基本操作.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
