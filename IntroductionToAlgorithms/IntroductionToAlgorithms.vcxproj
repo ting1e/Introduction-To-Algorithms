@@ -189,7 +189,7 @@
     <ClInclude Include="第16章 贪心算法\16_1_活动选择问题.h" />
     <ClInclude Include="第16章 贪心算法\16_2_贪心算法原理.h" />
     <ClInclude Include="第16章 贪心算法\16_3_哈夫曼编码.h" />
-    <ClInclude Include="第18章 B树\18_2_B树上的基本操作.h" />
+    <ClInclude Include="第18章 B树\18_2_B树上的基本操作_18_3_删除.h" />
     <ClInclude Include="第22章 基本的图算法\22_1_图的表示.h" />
     <ClInclude Include="第22章 基本的图算法\22_2_广度优先搜索.h" />
     <ClInclude Include="第22章 基本的图算法\22_3_深度优先搜索.h" />
