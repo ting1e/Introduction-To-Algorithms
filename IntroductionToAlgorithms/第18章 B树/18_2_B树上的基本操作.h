@@ -51,6 +51,8 @@ BTree *DiskRead(char fname[])
 
 void BTreeTraverse(BTree *tree)
 {
+	if (tree == NULL)
+		return;
 	if (tree->is_leaf)
 	{
 		for (int i = 0; i < tree->n; i++)
@@ -317,6 +319,7 @@ void BTreeDelete(BTree **t, int k)
 	if (x->n == 0)
 	{
 		*t = x->children[0];
+		free(x);
 	}
 
 }
@@ -330,7 +333,7 @@ void test()
 	{
 		BTreeInsert(&bt, i);
 	}
-	for (int i = 1; i < 90; i += 10)
+	for (int i = 1; i <90; i++)
 	{
  		BTreeDelete(&bt, i);
 	}
