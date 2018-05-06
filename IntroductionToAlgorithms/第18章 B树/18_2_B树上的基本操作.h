@@ -179,6 +179,60 @@ void BTreeInsert(BTree **t, int k)
 	}
 }
 
+void BTreeLeftRomate(BTree *x,int i)
+{
+	BTree *y = x->children[i];
+	BTree *z = x->children[i + 1];
+	y->key[y->n] = x->key[i];
+	y->children[y->n + 1] = z->children[0];
+	y->n++;
+	x->key[i] = z->key[0];
+	for (int j = 0; j < z->n - 1; j++)
+	{
+		z->key[j] = z->key[j + 1];
+		z->children[j] = z->children[j + 1];
+	}
+	z->children[z->n - 1] = z->children[z->n];
+	z->n--;
+}
+
+void BTreeRightRomate(BTree *x, int i)
+{
+	BTree *y = x->children[i];
+	BTree *z = x->children[i + 1];
+	for (int j = z->n; j > 0; j--)
+	{
+		z->key[j] = z->key[j - 1];
+		z->children[j + 1] = z->children[j];
+	}
+	z->children[1] = z->children[0];
+	z->key[0] = x->key[i];
+	z->children[0] = y->children[y->n];
+	x->key[i] = y->key[y->n - 1];
+	y->n--;
+}
+
+void BTreeCombine(BTree *x, int i)
+{
+	BTree *y = x->children[i];
+	BTree *z = x->children[i + 1];
+	y->key[y->n] = x->key[i];
+	y->n++;
+	for (int j = i; j < x->n - 1; j++)
+	{
+		x->key[j] = x->key[j + 1];
+		x->children[j + 1] = x->children[j + 2];
+	}
+	x->n--;
+	for (int j = 0; j < z->n; j++)
+	{
+		y->key[y->n + j] = z->key[j];
+		y->children[y->n + j] = z->children[j];
+	}
+	y->n += z->n;
+	y->children[y->n] = z->children[z->n];
+	free(z);
+}
 void BTreeDelete(BTree **t, int k)
 {
 	BTree *x = *t;
@@ -211,25 +265,8 @@ void BTreeDelete(BTree **t, int k)
 			}
 			else
 			{
-				BTree *y = x->children[i];
-				BTree *z = x->children[i + 1];
-				y->key[y->n] = k;
-				for (int j = 0; j < x->n - 1; j++)
-				{
-					x->key[i] = x->key[i + 1];
-					x->children[i + 1] = x->children[i + 2];
-				}
-				x->n--;
-				for (int j = 0; j < z->n; j++)
-				{
-					y->key[y->n + i] = z->key[i];
-					y->children[y->n + i + 1] = z->children[i];
-				}
-				y->n += z->n + 1;
-				y->children[y->n] = z->children[z->n];
-				free(z);
-				BTreeDelete(&(x->children[i]), k);
-
+				BTreeCombine(x, i);
+				BTreeDelete(&x->children[i], k);
 			}
 		}
 	}
@@ -237,128 +274,42 @@ void BTreeDelete(BTree **t, int k)
 	{
 		if (x->children[i]->n == T - 1)
 		{
-			if (i == 0)
+			if (i > 0 && i < x->n)
 			{
-				if (x->children[i + 1]->n >= T)
+				if (x->children[i - 1]->n >= T)
 				{
-					BTree *z = x->children[i + 1];
-					BTree *y = x->children[i];
-					y->key[y->n] = x->key[i];
-					y->children[y->n + 1] = z->children[0];
-					y->n++;
-					x->key[i] = z->key[0];
-					for (int j = 0; j < z->n - 1; j++)
-					{
-						z->key[j] = z->key[j + 1];
-						z->children[j] = z->children[j + 1];
-					}
-					z->children[z->n - 1] = z->children[z->n];
-					z->n--;
+					BTreeRightRomate(x, i - 1);
+				}
+				else if (x->children[i + 1]->n >= T)
+				{
+					BTreeLeftRomate(x, i);
 				}
 				else
 				{
-					BTree *y = x->children[i];
-					BTree *z = x->children[i + 1];
-					y->key[y->n] = k;
-					for (int j = 0; j < x->n - 1; j++)
-					{
-						x->key[i] = x->key[i + 1];
-						x->children[i + 1] = x->children[i + 2];
-					}
-					x->n--;
-					for (int j = 0; j < z->n; j++)
-					{
-						y->key[y->n + i] = z->key[i];
-						y->children[y->n + i + 1] = z->children[i];
-					}
-					y->n += z->n + 1;
-					y->children[y->n] = z->children[z->n];
-					free(z);
+					BTreeCombine(x, i);
+				}
+			}
+			else if (i == 0)
+			{
+				if (x->children[i + 1]->n >= T)
+				{
+					BTreeLeftRomate(x, 0);
+				}
+				else
+				{
+					BTreeCombine(x, 0);
 				}
 			}
 			else if (i == x->n)
 			{
 				if (x->children[i - 1]->n >= T)
 				{
-					BTree *y = x->children[i - 1];
-					BTree *z = x->children[i];
-					for (int j = z->n; j > 0; j--)
-					{
-						z->key[j] = z->key[j - 1];
-						z->children[j + 1] = z->children[j];
-					}
-					z->children[1] = z->children[0];
-					z->key[0] = x->key[i - 1];
-					z->children[0] = y->children[y->n];
-					x->key[i - 1] = y->key[y->n - 1];
-					y->n--;
+					BTreeRightRomate(x, i - 1);
 				}
 				else
 				{
-					BTree *y = x->children[i-1];
-					BTree *z = x->children[i];
-					y->key[y->n] = k;
-					x->n--;
-					for (int j = 0; j < z->n; j++)
-					{
-						y->key[y->n + i] = z->key[i];
-						y->children[y->n + i + 1] = z->children[i];
-					}
-					y->n += z->n + 1;
-					y->children[y->n] = z->children[z->n];
-					free(z);
+					BTreeCombine(x, i - 1);
 				}
-			}
-			else if (x->children[i - 1]->n >= T)
-			{
-				BTree *y = x->children[i - 1];
-				BTree *z = x->children[i];
-				for (int j = z->n; j > 0; j--)
-				{
-					z->key[j] = z->key[j - 1];
-					z->children[j + 1] = z->children[j];
-				}
-				z->children[1] = z->children[0];
-				z->key[0] = x->key[i-1];
-				z->children[0] = y->children[y->n];
-				x->key[i-1] = y->key[y->n - 1];
-				y->n--;
-			}
-			else if (x->children[i + 1]->n >= T)
-			{
-				BTree *z = x->children[i + 1];
-				BTree *y = x->children[i];
-				y->key[y->n] = x->key[i];
-				y->children[y->n + 1] = z->children[0];
-				y->n++;
-				x->key[i] = z->key[0];
-				for (int j = 0; j < z->n - 1; j++)
-				{
-					z->key[j] = z->key[j + 1];
-					z->children[j] = z->children[j + 1];
-				}
-				z->children[z->n - 1] = z->children[z->n];
-				z->n--;
-			}
-			else
-			{
-				BTree *y = x->children[i];
-				BTree *z = x->children[i + 1];
-				y->key[y->n] = k;
-				for (int j = 0; j < x->n - 1; j++)
-				{
-					x->key[i] = x->key[i + 1];
-					x->children[i + 1] = x->children[i + 2];
-				}
-				x->n--;
-				for (int j = 0; j < z->n; j++)
-				{
-					y->key[y->n + i] = z->key[i];
-					y->children[y->n + i + 1] = z->children[i];
-				}
-				y->n += z->n + 1;
-				y->children[y->n] = z->children[z->n];
-				free(z);
 			}
 		}
 		BTreeDelete(&x->children[i], k);
@@ -370,6 +321,8 @@ void BTreeDelete(BTree **t, int k)
 
 }
 
+
+//fix delete bug
 void test()
 {
 	BTree *bt = BTreeCreate();
@@ -379,7 +332,7 @@ void test()
 	}
 	for (int i = 1; i < 90; i += 10)
 	{
-		BTreeDelete(&bt, i);
+ 		BTreeDelete(&bt, i);
 	}
 
 	BTreeTraverse(bt);
