@@ -51,6 +51,7 @@ void FibHeapInsert(FibHeap *fibheap, FibNode *fib_node)
 		if (fib_node->key < fibheap->min_node->key)
 			fibheap->min_node = fib_node;
 	}
+	fib_node->parent = NULL;
 	fibheap->n++;
 }
 
@@ -98,6 +99,7 @@ void FibHeapLink(FibHeap *heap, FibNode *y, FibNode *x)
 		y->left = x->child->left;
 		x->child->left = y;
 		y->right = x->child;
+		y->parent = x;
 	}
 	x->degree++;
 	y->mark = 0;
@@ -180,6 +182,67 @@ FibNode *FibHeapExtractMin(FibHeap *heap)
 	return min;
 }
 
+void Cut(FibHeap *heap, FibNode *x, FibNode *y)
+{
+	if (y->degree == 1)
+	{
+		y->child = 0;
+	}
+	else
+	{
+		if (x == y->child)
+		{
+			y->child = x->right;
+		}
+		x->left->right = x->right;
+		x->right->left = x->left;
+	}
+	y->degree--;
+	x->mark = 0;
+	FibHeapInsert(heap, x);
+}
+
+void CascadingCut(FibHeap *heap, FibNode *y)
+{
+	FibNode *z = y->parent;
+	if (z != NULL)
+	{
+		if (y->mark == 0)
+		{
+			y->mark = 1;
+		}
+		else
+		{
+			Cut(heap, y, z);
+			CascadingCut(heap, z);
+		}
+	}
+}
+
+void FibHeapDecreaseKey(FibHeap *heap, FibNode *x, int k)
+{
+	if (k > x->key)
+		return;
+	x->key = k;
+	FibNode *y = x->parent;
+	if (y != NULL && x->key < y->key)
+	{
+		Cut(heap, x, y);
+		CascadingCut(heap, y);
+	}
+	if (x->key < heap->min_node->key)
+	{
+		heap->min_node = x;
+	}
+}
+
+void FibHeapDelete(FibHeap *heap, FibNode *node)
+{
+	FibHeapDecreaseKey(heap, node, INT_MIN);
+	FibHeapExtractMin(heap);
+}
+
+
 void test()
 {
 	FibHeap *heap = MakeFibHeap();
@@ -192,7 +255,7 @@ void test()
 	FibNode *node38 = CreateNode(38, 0);
 	FibNode *node41 = CreateNode(41, 0);
 	node38->child = node41;
-	node41->parent = node38;
+	
 	node18->right = node52;
 	node52->right = node38;
 	node38->right = node18;
@@ -200,7 +263,13 @@ void test()
 	node52->left = node18;
 	node38->left = node52;
 	node3->child = node52;
+	node41->parent = node38;
+	node39->parent = node18;
+
 	node52->parent = node3;
+	node38->parent = node3;
+	node18->parent = node3;
+
 	node3->degree = 3;
 	node18->degree = 1;
 	node38->degree = 1;
@@ -223,6 +292,7 @@ void test()
 	node46->right = node26;
 	node24->child = node26;
 	node26->parent = node24;
+	node46->parent = node24;
 	node24->degree = 2;
 	node26->degree=1;
 
@@ -235,5 +305,6 @@ void test()
 	FibHeapInsert(heap, CreateNode(21, 0));
 	heap->n = 15;
 	FibHeapExtractMin(heap);
-
+	FibHeapDecreaseKey(heap, node46, 5);
+	printf("1234");
 }
