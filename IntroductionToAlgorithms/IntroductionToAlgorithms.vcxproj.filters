@@ -123,6 +123,9 @@
     <ClInclude Include="第18章 B树\18_2_B树上的基本操作_18_3_删除.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="第19章 斐波那契堆\19_斐波那契堆.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
