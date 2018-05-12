@@ -126,6 +126,15 @@
     <ClInclude Include="第19章 斐波那契堆\19_斐波那契堆.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="第32章 字符串匹配\32_1_朴素字符串匹配算法.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第32章 字符串匹配\32_2_Rabin-Karp算法.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第32章 字符串匹配\32_4_Hnuth-Morris-Pratt算法.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">

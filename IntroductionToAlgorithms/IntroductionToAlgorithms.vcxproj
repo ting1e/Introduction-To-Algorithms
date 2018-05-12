@@ -194,6 +194,9 @@
     <ClInclude Include="第22章 基本的图算法\22_1_图的表示.h" />
     <ClInclude Include="第22章 基本的图算法\22_2_广度优先搜索.h" />
     <ClInclude Include="第22章 基本的图算法\22_3_深度优先搜索.h" />
+    <ClInclude Include="第32章 字符串匹配\32_1_朴素字符串匹配算法.h" />
+    <ClInclude Include="第32章 字符串匹配\32_2_Rabin-Karp算法.h" />
+    <ClInclude Include="第32章 字符串匹配\32_4_Hnuth-Morris-Pratt算法.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c" />
