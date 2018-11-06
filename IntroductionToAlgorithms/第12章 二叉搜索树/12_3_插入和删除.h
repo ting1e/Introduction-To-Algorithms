@@ -87,7 +87,7 @@ void TreeDelete(BSTree **root,int k)
 			y->right=z->right;
 			y->right->p=y;
 		}
-		Transplant(root,z,z->right);
+		Transplant(root,z,y);
 		y->left=z->left;
 		y->left->p=y;
 	}

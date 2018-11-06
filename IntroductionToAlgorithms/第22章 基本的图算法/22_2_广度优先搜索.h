@@ -24,7 +24,8 @@ void PrintPath(LGraph *G, VNode *s, VNode *v)
 void BFS(LGraph* G, VNode* s)
 {
 	VNode* u;
-	int i;	for (i = 0; i < G->vexnum; i++)
+	int i;	
+	for (i = 0; i < G->vexnum; i++)
 	{
 		G->vexs[i].color = white;
 		G->vexs[i].d = INT_MAX;
