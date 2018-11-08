@@ -27,7 +27,7 @@ void StronglyDFSVisit(LGraph *G, VNode* u, int *time,int c)
 		if (G->vexs[edge->ivex]->color == white)
 		{
 			G->vexs[edge->ivex]->pre = u;
-			StronglyDFSVisit(G, &G->vexs[edge->ivex], time,c);
+			StronglyDFSVisit(G, G->vexs[edge->ivex], time,c);
 		}
 		edge = edge->next_edge;
 	}
@@ -51,10 +51,9 @@ void StronglyDFS(LGraph * G)
 	int time = 0;
 	for (int i = SIZE-1; i >=0; i--)
 	{
-		if(sort[i]!=NULL&& (*sort[i]).color == white)
+		if(sort[i]!=NULL&& sort[i]->color == white)
 		{
 			StronglyDFSVisit(G, sort[i], &time,class++);
-			
 		}
 	}
 
