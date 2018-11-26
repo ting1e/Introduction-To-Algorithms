@@ -138,6 +138,12 @@
     <ClInclude Include="第22章 基本的图算法\22_5_强连通分量.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="第23章 最小生成树\23_2_Prim算法.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第23章 最小生成树\23_2_Kruskal算法.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">

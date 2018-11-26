@@ -19,7 +19,7 @@ void StronglyDFSVisit(LGraph *G, VNode* u, int *time,int c)
 	(*time)++;
 	u->d = *time;
 	u->color = gray;
-	u->cla = c;
+	u->category = c;
 	ENode *edge = u->first_edge;
 	printf("%c ", u->data);
 	while (edge != NULL)
@@ -41,8 +41,8 @@ void StronglyDFSVisit(LGraph *G, VNode* u, int *time,int c)
 void StronglyDFS(LGraph * G)
 {
 	VNode *sort[SIZE] = { 0 };
-	int class = 1;
-	for (int i = 0; i < G->vexnum; i++)
+	int category = 1;
+	for (int i = 1; i <= G->vexnum; i++)
 	{
 		G->vexs[i]->color = white;
 		G->vexs[i]->pre = NULL;
@@ -53,7 +53,7 @@ void StronglyDFS(LGraph * G)
 	{
 		if(sort[i]!=NULL&& sort[i]->color == white)
 		{
-			StronglyDFSVisit(G, sort[i], &time,class++);
+			StronglyDFSVisit(G, sort[i], &time,category++);
 		}
 	}
 
@@ -71,34 +71,22 @@ LGraph *StronglyConnectedComponents(LGraph *G)
 
 
 
-void test1()
+void test()
 {
 	
-	int msg[8][10];
-	for (int i = 0; i < 8; i++)
-		for (int j = 0; j < 10; j++)
-			msg[i][j] = -1;
-	msg[0][0] = 1;
 
-	msg[1][0] = 2;
-	msg[1][1] = 4;
-	msg[1][2] = 5;
+	int msg[8][10] =
+	{
+		2,0,0,0,0,0,0,0,0,0,
+		3,5,6,0,0,0,0,0,0,0,
+		4,7,0,0,0,0,0,0,0,0,
+		3,8,0,0,0,0,0,0,0,0,
+		1,6,0,0,0,0,0,0,0,0,
 
-	msg[2][0] = 3;
-	msg[2][1] = 6;
-
-	msg[3][2] = 2;
-	msg[3][1] = 7;
-
-	msg[4][0] = 0;
-	msg[4][1] = 5;
-
-	msg[5][0] = 6;
-	
-	msg[6][0] = 5;
-	msg[6][1] = 7;
-
-	msg[7][0] = 7;
+		7,0,0,0,0,0,0,0,0,0,
+		6,8,0,0,0,0,0,0,0,0,
+		8,0,0,0,0,0,0,0,0,0,
+	};
 
 	LGraph *G = CreateGraph(msg, 8, 14);
 	

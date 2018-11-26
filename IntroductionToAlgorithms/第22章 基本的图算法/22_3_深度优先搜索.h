@@ -29,13 +29,13 @@ void DFSVisit(LGraph *G, VNode* u, int *time)
 
 void DFS(LGraph * G)
 {
-	for (int i = 0; i < G->vexnum; i++)
+	for (int i = 1; i <= G->vexnum; i++)
 	{
 		G->vexs[i]->color = white;
 		G->vexs[i]->pre = NULL;
 	}
 	int time = 0;
-	for (int i = 0; i < G->vexnum; i++)
+	for (int i = 1; i <= G->vexnum; i++)
 	{
 		if (G->vexs[i]->color == white)
 		{
@@ -45,7 +45,7 @@ void DFS(LGraph * G)
 
 }
 
-void test()
+void _test()
 {
 	/*
 	r  --  s      t  --  u

@@ -176,7 +176,7 @@ void FreeCode(char *code[])
 	}
 }
 
-void HuffManCompress(char *in,char *out)
+void HuffManCompress(const char *in,const char *out)
 {
 	HuffmanNode *root;
 	char *code[nums] = { '\0' };
@@ -251,7 +251,7 @@ void HuffManCompress(char *in,char *out)
 }
 
 
-void HuffmanExtract(char *in, char *out)
+void HuffmanExtract(const char *in, const char *out)
 {
 	FILE *fp_in = fopen(in, "rb");
 	FILE *fp_out = fopen(out, "wb");
