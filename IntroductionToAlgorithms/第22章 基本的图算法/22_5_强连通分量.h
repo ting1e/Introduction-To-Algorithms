@@ -14,26 +14,26 @@
 	一边给结点做分类标记,每找到一个新的起点,分类标记值就加1。
 */
 
-void StronglyDFSVisit(LGraph *G, VNode* u, int *time,int c)
+void StronglyDFSVisit(LGraph *G, int u, int *time,int c)
 {
 	(*time)++;
-	u->d = *time;
-	u->color = gray;
-	u->category = c;
-	ENode *edge = u->first_edge;
-	printf("%c ", u->data);
+	G->vexs[u]->d = *time;
+	G->vexs[u]->color = gray;
+	G->vexs[u]->category = c;
+	ENode *edge = G->vexs[u]->first_edge;
+	printf("%c ", G->vexs[u]->data);
 	while (edge != NULL)
 	{
 		if (G->vexs[edge->ivex]->color == white)
 		{
 			G->vexs[edge->ivex]->pre = u;
-			StronglyDFSVisit(G, G->vexs[edge->ivex], time,c);
+			StronglyDFSVisit(G, edge->ivex, time,c);
 		}
 		edge = edge->next_edge;
 	}
-	u->color = black;
+	G->vexs[u]->color = black;
 	(*time)++;
-	u->f = *time;
+	G->vexs[u]->f = *time;
 }
 
 
@@ -45,7 +45,7 @@ void StronglyDFS(LGraph * G)
 	for (int i = 1; i <= G->vexnum; i++)
 	{
 		G->vexs[i]->color = white;
-		G->vexs[i]->pre = NULL;
+		G->vexs[i]->pre = 0;
 		sort[G->vexs[i]->f] = G->vexs[i];
 	}
 	int time = 0;
@@ -53,7 +53,7 @@ void StronglyDFS(LGraph * G)
 	{
 		if(sort[i]!=NULL&& sort[i]->color == white)
 		{
-			StronglyDFSVisit(G, sort[i], &time,category++);
+			StronglyDFSVisit(G, i, &time,category++);
 		}
 	}
 
@@ -93,7 +93,7 @@ void test()
 	LGraph *GT = StronglyConnectedComponents(G);
 
 	printf("\n");
-	free(G);
-	free(GT);
+	DestroyGraph(G);
+	DestroyGraph(GT);
 
 }

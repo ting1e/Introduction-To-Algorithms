@@ -1,7 +1,6 @@
 #pragma once
 #include "..//base.h"
 
-
 enum Color { white,gray,black };
 
 // 邻接表中表对应的链表的顶点
@@ -10,7 +9,7 @@ typedef struct _ENode
 	int ivex;                   // 该边所指向的顶点的位置
 	int source;				//前节点
 	int weight;				//权重
-	struct _ENode *next_edge;   // 指向下一条弧的指针
+	struct _ENode *next_edge;   // 该边指向下一条弧的指针
 }ENode, *PENode;
 
 // 邻接表中表的顶点
@@ -18,7 +17,7 @@ typedef struct _VNode
 {
 	char data;              // 顶点信息
 	enum Color color;		//颜色
-	struct _VNode *pre;		//前驱结点
+	int pre;		//前驱结点
 	int category;
 	int d;					//源节点到当前节点的距离
 	int f;
@@ -41,22 +40,23 @@ LGraph *CreateGraph(int msg[][10], int vexs,int edges)
 	G->vexnum = vexs;
 	G->edgnum = edges;
 
-	for (int i = 1; i <= vexs; i++)
+	for (int i = 0; i < vexs; i++)
 	{
 		VNode *vnode = (VNode *)malloc(sizeof(VNode));
-		vnode->data = i + 'a' - 1;
+		vnode->data = i + 'a' ;
 		vnode->first_edge = NULL;
-		vnode->pre = NULL;
+		vnode->pre = 0;
 
-		for (int j = 0; j < 10; j++)
+		for (int j = 0; j <vexs; j++)
 		{
-			if (msg[i-1][j] > 0)
+			if (msg[i][j] != 0)
 			{
 				if (vnode->first_edge == NULL)
 				{
 					ENode *edge = (ENode *)malloc(sizeof(ENode));
 
-					edge->ivex = msg[i-1][j];
+					edge->ivex = j+1;
+					edge->weight = msg[i][j];
 					edge->next_edge = NULL;
 					vnode->first_edge = edge;
 				}
@@ -69,16 +69,18 @@ LGraph *CreateGraph(int msg[][10], int vexs,int edges)
 					}
 					ENode *edge = (ENode *)malloc(sizeof(ENode));
 
-					edge->ivex = msg[i-1][j];
+					edge->ivex = j + 1;
+					edge->weight = msg[i][j];
 					edge->next_edge = NULL;
 					pre_Lnode->next_edge = edge;
 				}
 			}
 		}
-		G->vexs[i] = vnode;
+		G->vexs[i+1] = vnode;
 	}
 	return G;
 }
+
 
 
 void DestroyGraph(LGraph *G)

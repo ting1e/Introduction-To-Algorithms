@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -197,6 +197,9 @@
     <ClInclude Include="第22章 基本的图算法\22_5_强连通分量.h" />
     <ClInclude Include="第23章 最小生成树\23_2_Kruskal算法.h" />
     <ClInclude Include="第23章 最小生成树\23_2_Prim算法.h" />
+    <ClInclude Include="第24章 单源最短路径\24_2_Bellman-Ford算法.h" />
+    <ClInclude Include="第24章 单源最短路径\24_3_Dijkstra算法.h" />
+    <ClInclude Include="第24章 单源最短路径\松弛操作.h" />
     <ClInclude Include="第32章 字符串匹配\32_1_朴素字符串匹配算法.h" />
     <ClInclude Include="第32章 字符串匹配\32_2_Rabin-Karp算法.h" />
     <ClInclude Include="第32章 字符串匹配\32_4_Hnuth-Morris-Pratt算法.h" />

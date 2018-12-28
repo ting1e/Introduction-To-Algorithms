@@ -2,54 +2,7 @@
 
 #include "../第22章 基本的图算法/22_1_图的表示.h"
 
-LGraph *CreateGraphWithWidth(int msg[][10],int weight[][10], int vexs, int edges)
-{
-	LGraph *G = (LGraph *)malloc(sizeof(LGraph));
-	G->vexnum = vexs;
-	G->edgnum = edges;
 
-	for (int i = 1; i <= vexs; i++)
-	{
-		VNode *vnode = (VNode *)malloc(sizeof(VNode));
-		vnode->data = i + 'a' - 1;
-		vnode->first_edge = NULL;
-		vnode->pre = NULL;
-
-		for (int j = 0; j < 10; j++)
-		{
-			if (msg[i - 1][j] > 0)
-			{
-				if (vnode->first_edge == NULL)
-				{
-					ENode *edge = (ENode *)malloc(sizeof(ENode));
-
-					edge->ivex = msg[i - 1][j];
-					edge->source = i;
-					edge->weight = weight[i - 1][j];
-					edge->next_edge = NULL;
-					vnode->first_edge = edge;
-				}
-				else
-				{
-					ENode * pre_Lnode = vnode->first_edge;
-					while (pre_Lnode->next_edge != NULL)
-					{
-						pre_Lnode = pre_Lnode->next_edge;
-					}
-					ENode *edge = (ENode *)malloc(sizeof(ENode));
-
-					edge->ivex = msg[i - 1][j];
-					edge->source = i;
-					edge->weight = weight[i - 1][j];
-					edge->next_edge = NULL;
-					pre_Lnode->next_edge = edge;
-				}
-			}
-		}
-		G->vexs[i] = vnode;
-	}
-	return G;
-}
 
 LGraph *MakeSet(LGraph* G)
 {

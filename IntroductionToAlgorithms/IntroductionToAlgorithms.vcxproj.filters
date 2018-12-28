@@ -144,6 +144,12 @@
     <ClInclude Include="第23章 最小生成树\23_2_Kruskal算法.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="第24章 单源最短路径\松弛操作.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="第24章 单源最短路径\24_2_Bellman-Ford算法.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
